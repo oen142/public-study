@@ -15,3 +15,12 @@ span {
     padding: 20px;
     display: block;
 }
+table {
+    margin: 10px;
+    padding: 10px;
+    stroke: red;
+    background: bisque;
+}
+caption{
+    background: aqua;
+}
