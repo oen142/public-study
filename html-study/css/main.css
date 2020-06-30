@@ -19,6 +19,8 @@ table {
     margin: 10px;
     padding: 10px;
     stroke: red;
+    size: 10px;
+
     background: bisque;
 }
 caption{
