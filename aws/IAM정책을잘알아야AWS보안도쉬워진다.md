@@ -198,3 +198,5 @@ https://www.youtube.com/watch?v=iPKaylieTV8&list=WL&index=44&t=0s
 ```
 
 ## 적용된 권한 결과
+
+slacktest
