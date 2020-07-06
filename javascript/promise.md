@@ -76,3 +76,95 @@ myPromise
     console.log(error);
   });
 ```
+
+
+```javascript
+function work(callback){
+  setTimeout(()=>{
+    const start = Date.now();
+    for(let i = 0 ; i < 1000000000 ; i++){
+  
+    }
+    const end = Date.now();
+    console.log(end - start + 'ms');
+    callback(end -start);
+  } , 0)
+
+}
+function workNotAsynk(){
+  const start = Date.now();
+  for(let i = 0 ; i < 1000000000 ; i++){
+
+  }
+  const end = Date.now();
+  console.log(end - start + 'ms');
+}
+
+console.log('작업시작');
+work((ms)=>{
+  console.log('작업이 끝났어요');
+  console.log(ms + 'ms 걸렸다고 해요');
+});
+console.log('다음 작업');
+
+```
+
+```javascript
+function increaseAndPrint(n) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const value = n + 1;
+      if (value === 5) {
+        const error = new Error();
+        error.name = "ValueIsFiveError";
+        reject(error);
+        return;
+      }
+      console.log(value);
+      resolve(value);
+    }, 1000);
+  });
+}
+
+increaseAndPrint(0).then(n => {
+  return increaseAndPrint(n);
+}).then(n =>{
+  return increaseAndPrint(n);
+}).then(n =>{
+  return increaseAndPrint(n);
+}).then(n =>{
+  return increaseAndPrint(n);
+}).then(n =>{
+  return increaseAndPrint(n);
+}).catch(e =>{
+  console.error(e);
+})
+
+```
+```javascript
+function increaseAndPrint(n) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const value = n + 1;
+      if (value === 5) {
+        const error = new Error();
+        error.name = "ValueIsFiveError";
+        reject(error);
+        return;
+      }
+      console.log(value);
+      resolve(value);
+    }, 1000);
+  });
+}
+
+increaseAndPrint(0).then(increaseAndPrint)
+.then(increaseAndPrint)
+.then(increaseAndPrint)
+.then(increaseAndPrint)
+.then(increaseAndPrint)
+.catch(e => {
+  console.error(e);
+})
+
+```
