@@ -6,4 +6,12 @@
 
 - 예제
     - `cat FILENAME` : 파일 내용을 출력 
-    - 
+    - `cat FILENAME FILENAME FILENAME` : 파일 내용을 연속해서 출
+    - ` cat -n FILENAME FILENAME FILENAME` : n 옵션 사용시 행 번호를 표시한다.
+
+## 리눅스 cat 명령어로 파일만들기
+
+`cat > file1 (내용입력후 ctrl + d를 눌러 저장)`
+리다이렉션 기호를 사용하여 입력한 내용으로 새로운 파일을 만든다.
+`>`기호를 사용하면 기존에 있는 파일 내용을 지우고 저장하고
+`>>`기호를 사용하면 기존 파일 내용 뒤에 연속해서 기록합니다.
