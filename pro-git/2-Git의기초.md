@@ -14,7 +14,9 @@ Git이 파일을 관리하게 하려면 저장소에 파일을 추가하고 커�
 커밋한다.
 
 `$git add *.c`
+
 `$git add LICENSE`
+
 `$git commit -m 'init'`
 
 
