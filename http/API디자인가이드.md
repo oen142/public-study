@@ -110,3 +110,19 @@ service-api.com/app-setups
     },
 }
 ```
+
+- 편의성을 위해 ID가 아닌 역참조를 지원하자
+    - 때론 최종 사용자에게 리소스 식별을 위해 ID를 제공하는 편이 불편할 수도 있다. 예를 들면 사용자는 히로쿠 앱을 기준으로 생각하지만,
+    해당 앱은 UUID를 통해 식별된다. 이런 경우 ID나 이름을 모두 허용하는 방법을 원할 수도 있다.
+
+- 구조화된 오류를 생성하자
+    - 오류가 발생하면 일관성 있고 구조화된 응답 본문을 생성하자. 기계가 읽을수 있는 오류 `id`및 사람이 읽을수 있는 오류`message`와 선택사항으로써
+    클라이언트에게 오류에 관한 정보와 해결 방안을 알려줄 url을 포함시키자.
+`HTTP/1.1 429 Too Many Requests`
+```
+{
+    "id": "rate_limit",
+    "message": "Account reached its API rate limit.",
+    "url": "https://docs.service.com/rate-limits"
+}
+```    
